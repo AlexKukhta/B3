@@ -1,0 +1,47 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Алгоритм суммирования двух чисел и сравнения результатов");
+            Console.WriteLine();
+            Console.Write("Введите число 1: ");
+            var number1 = Console.ReadLine();
+            double number11 = Convert.ToDouble(number1);
+
+            Console.Write("Введите число 2: ");
+            var number2 = Console.ReadLine();
+            double number22 = Convert.ToDouble(number2);
+
+            double sum = Summa(number11, number22);
+
+          
+                Console.Write("Введите результат: ");
+                var result = Console.ReadLine();
+                double result1 = Convert.ToDouble(result);
+                double a;
+                    if (sum == result1)
+                {
+                    Console.WriteLine("Правильно");
+                }
+                else if (result1 > sum)
+                {
+                    a = result1 - sum;
+                    Console.WriteLine("Вы ввели неверное значение. Значение должно быть меньше на {0}.", a);
+                }
+                else
+                {
+                    a = sum-result1;
+                    Console.WriteLine("Вы ввели неверное значение. Значение должно быть больше на {0}.", a);
+                }
+
+           Console.ReadKey();
+
+        }
+
+        static double Summa(double number11, double number22)
+        {
+
+            return number11 + number22;
+
+        }
+    }
