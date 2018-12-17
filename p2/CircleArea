@@ -1,0 +1,26 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Алгоритм вычисления площади круга\n");
+            Console.WriteLine(string.Empty);
+            Console.Write("Введите радиус круга: ");
+            var number1 = Console.ReadLine();
+            double number11 = Convert.ToDouble(number1);
+
+            const double pi=3.1415;
+
+            double area = Area(number11, pi);
+
+            Console.WriteLine("Площадь круга равна {0}", area);
+
+            Console.ReadKey();
+        }
+
+        static double Area(double number11, double pi)
+        {
+
+            return pi*Math.Pow(number11,2);
+
+        }
+    }
