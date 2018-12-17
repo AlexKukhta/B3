@@ -1,0 +1,70 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Алгоритм суммирования двух чисел и сравнения результатов");
+            Console.WriteLine();
+            Console.Write("Введите число 1: ");
+            var number1 = Console.ReadLine();
+            double number11 = Convert.ToDouble(number1);
+
+            Console.Write("Введите число 2: ");
+            var number2 = Console.ReadLine();
+            double number22 = Convert.ToDouble(number2);
+
+            Console.Write("Введите число 3: ");
+            var number3 = Console.ReadLine();
+            double number33 = Convert.ToDouble(number3);
+
+            Console.Write("Введите число 4: ");
+            var number4 = Console.ReadLine();
+            double number44 = Convert.ToDouble(number4);
+
+            Console.Write("Введите число 5: ");
+            var number5 = Console.ReadLine();
+            double number55 = Convert.ToDouble(number5);
+
+            
+            if(number11>0 && number22>0 && number33>0 && number44>0 && number55>0)
+            {
+            double sum = Summa(number11, number22, number33, number44, number55);
+
+            for (int i = 1; i < 4; i += 1)
+            {
+                Console.WriteLine("Попытка {0}", i);
+                Console.Write("Введите результат: ");
+                var result = Console.ReadLine();
+                double result1 = Convert.ToDouble(result);
+                double a;
+                               
+                if (sum == result1)
+                {
+                    Console.WriteLine("Верно");
+                    break;
+                }
+                else if (result1 > sum)
+                {
+                    a = result1 - sum;
+                    Console.WriteLine("Вы ввели неверное значение. Значение должно быть меньше на {0}.Повторите попытку", a);
+                }
+                else
+                {
+                    a = sum - result1;
+                    Console.WriteLine("Вы ввели неверное значение. Значение должно быть больше на {0}.Повторите попытку", a);
+                }
+            }
+
+            }
+
+
+            Console.ReadKey();
+
+        }
+
+        static double Summa(double number11, double number22, double number33, double number44, double number55)
+        {
+
+            return number11 + number22 + number33 + number44 + number55;
+
+        }
+    }
