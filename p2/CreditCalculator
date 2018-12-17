@@ -1,0 +1,52 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Кредитный калькулятор на 1 год");
+            Console.WriteLine();
+            Console.Write("Введите сумму кредита: ");
+            var sum = Console.ReadLine();
+            double sum1 = Convert.ToDouble(sum);
+
+            Console.Write("Введите проценты по кредиту: ");
+            var percent = Console.ReadLine();
+            double percent1 = Convert.ToDouble(percent);
+
+
+            double totalSum = TotalSum(sum1, percent1);
+            double totalSumMonth = totalSum / 12;
+            double totalPercent = sum1 * (percent1 / 100);
+
+            for (int i = 1; i < 13; i++)
+            {
+                switch(i)
+                {
+                    case 1:
+                        Console.WriteLine("{0} месяц {1} руб.", i, totalSumMonth);
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+                    case 12:
+                        Console.WriteLine("{0} месяц {1} руб.", i, totalSumMonth);
+                        break;
+                }
+            }
+
+            Console.WriteLine("Общая сумма составит {0} + {1}", sum1, totalPercent);
+            
+            Console.ReadKey();
+        }
+
+        static double TotalSum(double sum1, double percent1)
+        {
+            return sum1 * ((100 + percent1) / 100);
+        }
+    }
